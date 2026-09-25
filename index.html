@@ -1,61 +1,34 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Prince Verma · IT Specialist & Digital Solutions Expert</title>
+  <title>Prince Verma · IT Specialist, Web Developer & Designer</title>
+
+  <!-- Primary Meta & SEO -->
+  <meta name="title" content="Prince Verma · IT Specialist, Web Developer & Designer">
+  <meta name="description" content="Official Portfolio of Prince Verma - NCVT Certified C.H.N.M District Rank 1 Topper, Full-Stack Web Developer, E-Governance Portal Specialist & Graphic Designer from Haryana.">
+  <meta name="keywords" content="Prince Verma, IT Specialist, Web Developer, Graphic Designer, Video Editor, Panchkula, Haryana, C.H.N.M, C.O.P.A, UDISE+, MIS Haryana">
+  <meta name="author" content="Prince Verma">
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Font Awesome 6 Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-  <!-- Plus Jakarta Sans & JetBrains Mono Fonts -->
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <script>
     tailwind.config = {
       darkMode: 'class',
       theme: {
         extend: {
-          fontFamily: {
-            sans: ['Plus Jakarta Sans', 'sans-serif'],
-            mono: ['JetBrains Mono', 'monospace'],
-          },
+          fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'] },
           colors: {
-            theme: {
-              bg: 'var(--bg-main)',
-              card: 'var(--bg-card)',
-              cardHover: 'var(--bg-card-hover)',
-              subtle: 'var(--bg-subtle)',
-              border: 'var(--border-color)',
-              heading: 'var(--text-heading)',
-              body: 'var(--text-body)',
-              muted: 'var(--text-muted)'
-            },
-            accent: {
-              DEFAULT: 'var(--accent)',
-              hover: 'var(--accent-hover)',
-              glow: 'var(--accent-glow)',
-              light: 'var(--accent-light)',
-            }
-          },
-          animation: {
-            'marquee': 'marquee 22s linear infinite',
-            'pulse-glow': 'pulseGlow 2.5s infinite',
-          },
-          keyframes: {
-            marquee: {
-              '0%': { transform: 'translateX(0%)' },
-              '100%': { transform: 'translateX(-50%)' }
-            },
-            pulseGlow: {
-              '0%, 100%': { opacity: '0.6', transform: 'scale(1)' },
-              '50%': { opacity: '1', transform: 'scale(1.05)' }
-            }
+            brand: { DEFAULT: 'var(--brand-color, #ff6b4a)', hover: 'var(--brand-hover, #ff8569)', glow: 'var(--brand-glow, rgba(255,107,74,0.15))' },
+            theme: { bg: 'var(--bg-primary, #0b0b12)', card: 'var(--bg-card, #12121c)', subtle: 'var(--bg-subtle, #181824)', border: 'var(--border-color, #252533)', textPrimary: 'var(--text-primary, #ffffff)', textSecondary: 'var(--text-secondary, #8b8b9e)' }
           }
         }
       }
@@ -63,603 +36,303 @@
   </script>
 
   <style>
-    /* Default Theme 1: Dark Obsidian (Orange Accent) */
-    :root {
-      --bg-main: #0a0a12;
-      --bg-card: #12121f;
-      --bg-card-hover: #1a1a2e;
-      --bg-subtle: #181828;
-      --border-color: #24243a;
-      --text-heading: #ffffff;
-      --text-body: #9ca3af;
-      --text-muted: #6b7280;
-      --accent: #ff6b4a;
-      --accent-hover: #ff8569;
-      --accent-glow: rgba(255, 107, 74, 0.35);
-      --accent-light: rgba(255, 107, 74, 0.12);
-    }
+    :root[data-theme="dark"] { --bg-primary: #0b0b12; --bg-card: #12121c; --bg-subtle: #181824; --border-color: #252533; --text-primary: #ffffff; --text-secondary: #8b8b9e; --brand-color: #ff6b4a; --brand-hover: #ff8569; --brand-glow: rgba(255, 107, 74, 0.2); }
+    :root[data-theme="blue"] { --bg-primary: #070e17; --bg-card: #0d1927; --bg-subtle: #142336; --border-color: #1e324a; --text-primary: #f0f6fc; --text-secondary: #8b9eb0; --brand-color: #38bdf8; --brand-hover: #7dd3fc; --brand-glow: rgba(56, 189, 248, 0.2); }
+    :root[data-theme="light"] { --bg-primary: #f8fafc; --bg-card: #ffffff; --bg-subtle: #f1f5f9; --border-color: #e2e8f0; --text-primary: #0f172a; --text-secondary: #64748b; --brand-color: #ea580c; --brand-hover: #f97316; --brand-glow: rgba(234, 88, 12, 0.15); }
+    :root[data-theme="emerald"] { --bg-primary: #03140f; --bg-card: #08211a; --bg-subtle: #0f3027; --border-color: #18473a; --text-primary: #ecfdf5; --text-secondary: #75a392; --brand-color: #10b981; --brand-hover: #34d399; --brand-glow: rgba(16, 185, 129, 0.2); }
+    :root[data-theme="violet"] { --bg-primary: #0f0717; --bg-card: #180d26; --bg-subtle: #231338; --border-color: #361e54; --text-primary: #faf5ff; --text-secondary: #a28cb8; --brand-color: #a855f7; --brand-hover: #c084fc; --brand-glow: rgba(168, 85, 247, 0.2); }
 
-    /* Theme 2: Minimal Light */
-    [data-theme="light"] {
-      --bg-main: #f4f6f9;
-      --bg-card: #ffffff;
-      --bg-card-hover: #f8fafc;
-      --bg-subtle: #edf2f7;
-      --border-color: #e2e8f0;
-      --text-heading: #0f172a;
-      --text-body: #475569;
-      --text-muted: #94a3b8;
-      --accent: #ea580c;
-      --accent-hover: #c2410c;
-      --accent-glow: rgba(234, 88, 12, 0.25);
-      --accent-light: rgba(234, 88, 12, 0.08);
-    }
-
-    /* Theme 3: Warm Amber Neon */
-    [data-theme="amber"] {
-      --bg-main: #0d0b07;
-      --bg-card: #18140c;
-      --bg-card-hover: #261f12;
-      --bg-subtle: #211a0f;
-      --border-color: #382b14;
-      --text-heading: #fffbeb;
-      --text-body: #d97706;
-      --text-muted: #92400e;
-      --accent: #f59e0b;
-      --accent-hover: #fbbf24;
-      --accent-glow: rgba(245, 158, 11, 0.4);
-      --accent-light: rgba(245, 158, 11, 0.15);
-    }
-
-    /* Theme 4: Cyberpunk Emerald */
-    [data-theme="emerald"] {
-      --bg-main: #04120e;
-      --bg-card: #08211b;
-      --bg-card-hover: #0e332a;
-      --bg-subtle: #0b2b23;
-      --border-color: #154538;
-      --text-heading: #ecfdf5;
-      --text-body: #6ee7b7;
-      --text-muted: #059669;
-      --accent: #10b981;
-      --accent-hover: #34d399;
-      --accent-glow: rgba(16, 185, 129, 0.4);
-      --accent-light: rgba(16, 185, 129, 0.15);
-    }
-
-    /* Theme 5: Royal Indigo */
-    [data-theme="indigo"] {
-      --bg-main: #0b0c1e;
-      --bg-card: #121430;
-      --bg-card-hover: #1c1f47;
-      --bg-subtle: #171a3d;
-      --border-color: #272c63;
-      --text-heading: #e0e7ff;
-      --text-body: #a5b4fc;
-      --text-muted: #6366f1;
-      --accent: #6366f1;
-      --accent-hover: #818cf8;
-      --accent-glow: rgba(99, 102, 241, 0.4);
-      --accent-light: rgba(99, 102, 241, 0.15);
-    }
-
-    body {
-      background-color: var(--bg-main);
-      color: var(--text-body);
-      transition: background-color 0.35s cubic-bezier(0.4, 0, 0.2, 1), color 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    /* Custom Modern Pill Buttons with Glow */
-    .btn-pill-primary {
-      background-color: var(--accent);
-      color: #ffffff;
-      box-shadow: 0 4px 20px -2px var(--accent-glow);
-      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    .btn-pill-primary:hover {
-      background-color: var(--accent-hover);
-      box-shadow: 0 8px 30px 2px var(--accent-glow);
-      transform: translateY(-2px);
-    }
-    .btn-pill-primary:active {
-      transform: translateY(0);
-    }
-
-    .btn-pill-outline {
-      border: 1px solid var(--border-color);
-      background-color: var(--bg-subtle);
-      color: var(--text-heading);
-      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    .btn-pill-outline:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-      box-shadow: 0 4px 20px -2px var(--accent-glow);
-      transform: translateY(-2px);
-    }
-
-    /* Custom Scrollbar */
-    ::-webkit-scrollbar {
-      width: 8px;
-      height: 8px;
-    }
-    ::-webkit-scrollbar-track {
-      background: var(--bg-main);
-    }
-    ::-webkit-scrollbar-thumb {
-      background: var(--border-color);
-      border-radius: 9999px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-      background: var(--accent);
-    }
-
-    /* Pause Marquee on Hover */
-    .marquee-container:hover .marquee-content {
-      animation-play-state: paused;
-    }
+    body { background-color: var(--bg-primary); color: var(--text-primary); font-family: 'Plus Jakarta Sans', sans-serif; transition: background-color 0.3s, color 0.3s; }
+    ::-webkit-scrollbar { width: 8px; } ::-webkit-scrollbar-track { background: var(--bg-primary); } ::-webkit-scrollbar-thumb { background: var(--border-color); border-radius: 4px; }
+    @keyframes marquee { 0% { transform: translateX(0%); } 100% { transform: translateX(-50%); } }
+    .animate-marquee { display: flex; width: 200%; animation: marquee 25s linear infinite; }
+    .animate-marquee:hover { animation-play-state: paused; }
+    .project-card { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+    .project-card:hover { transform: translateY(-6px); border-color: var(--brand-color); box-shadow: 0 15px 30px -10px var(--brand-glow); }
+    .glass-nav { background-color: rgba(18, 18, 28, 0.85); backdrop-filter: blur(12px); }
   </style>
 </head>
-<body class="font-sans antialiased min-h-screen selection:bg-accent selection:text-white">
+<body class="min-h-screen relative overflow-x-hidden">
 
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+  <!-- Mobile Drawer Overlay -->
+  <div id="drawerOverlay" onclick="toggleMobileDrawer()" class="fixed inset-0 bg-black/60 z-40 hidden backdrop-blur-sm transition-opacity"></div>
 
-    <!-- ===== NAVBAR ===== -->
-    <nav class="sticky top-4 z-50 bg-theme-card/85 backdrop-blur-md rounded-2xl p-4 border border-theme-border mb-8 flex flex-col md:flex-row justify-between items-center gap-4 shadow-2xl transition-colors duration-300">
-      <!-- Logo -->
-      <a href="#" class="text-theme-heading font-extrabold text-xl tracking-tight flex items-center gap-2.5 group">
-        <span class="w-9 h-9 rounded-xl bg-accent text-white flex items-center justify-center font-bold text-sm shadow-md group-hover:scale-105 transition-transform duration-300">PV</span>
-        <span>Prince <span class="text-accent">Verma</span></span>
+  <!-- Mobile Side Nav Drawer -->
+  <aside id="mobileDrawer" class="fixed top-0 left-0 h-full w-72 bg-theme-card border-r border-theme-border z-50 transform -translate-x-full transition-transform duration-300 p-6 flex flex-col justify-between">
+    <div>
+      <div class="flex items-center justify-between mb-8 pb-4 border-b border-theme-border">
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-xl bg-brand flex items-center justify-center text-theme-bg font-extrabold text-sm">PV</div>
+          <span class="font-bold text-base tracking-tight">Prince Verma</span>
+        </div>
+        <button onclick="toggleMobileDrawer()" class="text-theme-textSecondary hover:text-brand text-lg"><i class="fas fa-xmark"></i></button>
+      </div>
+      <nav class="flex flex-col gap-4 text-sm font-medium">
+        <a href="#home" onclick="toggleMobileDrawer()" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-theme-subtle hover:text-brand transition"><i class="fas fa-house w-5 text-brand"></i> Home</a>
+        <a href="#about" onclick="toggleMobileDrawer()" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-theme-subtle hover:text-brand transition"><i class="fas fa-user w-5 text-brand"></i> About Me</a>
+        <a href="#experience" onclick="toggleMobileDrawer()" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-theme-subtle hover:text-brand transition"><i class="fas fa-briefcase w-5 text-brand"></i> Experience</a>
+        <a href="#projects" onclick="toggleMobileDrawer()" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-theme-subtle hover:text-brand transition"><i class="fas fa-layer-group w-5 text-brand"></i> Portals</a>
+        <a href="gallery.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-brand/10 text-brand font-bold transition"><i class="fas fa-images w-5"></i> Public Gallery</a>
+        <a href="#contact" onclick="toggleMobileDrawer()" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-theme-subtle hover:text-brand transition"><i class="fas fa-paper-plane w-5 text-brand"></i> Contact</a>
+      </nav>
+    </div>
+    <div class="pt-4 border-t border-theme-border">
+      <a href="https://docs.google.com/document/d/1S6W82L9vL-3k-Example/view" target="_blank" class="w-full bg-brand text-theme-bg font-bold py-2.5 rounded-xl text-xs flex items-center justify-center gap-2 shadow-lg shadow-brand/20">
+        <i class="fas fa-file-arrow-down"></i> My Resume
+      </a>
+    </div>
+  </aside>
+
+  <!-- Sticky Desktop Navbar -->
+  <header class="sticky top-4 z-30 max-w-5xl mx-auto px-4">
+    <nav class="glass-nav rounded-2xl p-3 sm:px-6 border border-theme-border flex items-center justify-between shadow-2xl">
+      <a href="#home" class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-lg bg-brand flex items-center justify-center text-theme-bg font-black text-sm shadow-md">PV</div>
+        <span class="font-bold text-base tracking-tight hidden sm:inline">Prince Verma</span>
       </a>
 
-      <!-- Nav Links -->
-      <div class="flex flex-wrap items-center justify-center gap-5 sm:gap-7 text-xs sm:text-sm text-theme-body font-semibold">
-        <a href="#about" class="hover:text-accent transition-colors">About</a>
-        <a href="#services" class="hover:text-accent transition-colors">Services</a>
-        <a href="#projects" class="hover:text-accent transition-colors">Projects</a>
-        <a href="#credentials" class="hover:text-accent transition-colors">Credentials</a>
-        <a href="#contact" class="hover:text-accent transition-colors">Contact</a>
+      <div class="hidden md:flex items-center gap-6 text-xs text-theme-textSecondary font-semibold">
+        <a href="#home" class="hover:text-brand transition">Home</a>
+        <a href="#about" class="hover:text-brand transition">About</a>
+        <a href="#experience" class="hover:text-brand transition">Experience</a>
+        <a href="#projects" class="hover:text-brand transition">Portals</a>
+        <a href="gallery.html" class="text-brand hover:underline transition font-bold"><i class="fas fa-photo-film mr-1"></i> Gallery</a>
+        <a href="#contact" class="hover:text-brand transition">Contact</a>
       </div>
 
-      <!-- Theme Selector Dropdown & System Theme Toggle -->
-      <div class="flex items-center gap-2 bg-theme-subtle border border-theme-border p-1.5 rounded-xl">
-        <i class="fas fa-palette text-accent text-xs pl-2"></i>
-        <select id="themeSelector" onchange="changeTheme(this.value)" class="bg-transparent text-theme-heading text-xs font-semibold focus:outline-none cursor-pointer pr-1 py-1">
-          <option value="system">💻 System Theme</option>
-          <option value="dark">🌑 Dark Obsidian</option>
-          <option value="amber">🔥 Warm Amber</option>
-          <option value="light">☀️ Minimal Light</option>
-          <option value="emerald">⚡ Cyber Emerald</option>
-          <option value="indigo">🔮 Royal Indigo</option>
-        </select>
+      <div class="flex items-center gap-3">
+        <!-- Multi-Theme Dropdown -->
+        <div class="relative group">
+          <button class="w-8 h-8 rounded-lg bg-theme-subtle border border-theme-border flex items-center justify-center text-theme-textSecondary hover:text-brand text-xs transition">
+            <i class="fas fa-palette"></i>
+          </button>
+          <div class="absolute right-0 mt-2 w-40 bg-theme-card border border-theme-border rounded-xl p-2 shadow-2xl hidden group-hover:block z-50">
+            <div class="text-[10px] font-bold text-theme-textSecondary uppercase tracking-wider px-2 py-1 mb-1 border-b border-theme-border">Select Theme</div>
+            <button onclick="setTheme('system')" class="w-full text-left px-2 py-1.5 rounded text-xs hover:bg-theme-subtle flex items-center gap-2"><i class="fas fa-desktop text-brand"></i> OS Default</button>
+            <button onclick="setTheme('dark')" class="w-full text-left px-2 py-1.5 rounded text-xs hover:bg-theme-subtle flex items-center gap-2"><i class="fas fa-moon text-orange-400"></i> Dark Coral</button>
+            <button onclick="setTheme('blue')" class="w-full text-left px-2 py-1.5 rounded text-xs hover:bg-theme-subtle flex items-center gap-2"><i class="fas fa-water text-sky-400"></i> Slate Blue</button>
+            <button onclick="setTheme('emerald')" class="w-full text-left px-2 py-1.5 rounded text-xs hover:bg-theme-subtle flex items-center gap-2"><i class="fas fa-leaf text-emerald-400"></i> Cyber Emerald</button>
+            <button onclick="setTheme('violet')" class="w-full text-left px-2 py-1.5 rounded text-xs hover:bg-theme-subtle flex items-center gap-2"><i class="fas fa-wand-magic-sparkles text-purple-400"></i> Violet Neon</button>
+            <button onclick="setTheme('light')" class="w-full text-left px-2 py-1.5 rounded text-xs hover:bg-theme-subtle flex items-center gap-2"><i class="fas fa-sun text-amber-500"></i> Light Mode</button>
+          </div>
+        </div>
+
+        <a href="https://docs.google.com/document/d/1S6W82L9vL-3k-Example/view" target="_blank" class="hidden sm:flex border border-theme-border bg-theme-subtle hover:border-brand hover:text-brand text-xs font-semibold px-4 py-2 rounded-lg transition items-center gap-1.5">
+          <i class="fas fa-file-lines text-brand"></i> My Resume
+        </a>
+
+        <button onclick="toggleMobileDrawer()" class="md:hidden w-8 h-8 rounded-lg bg-theme-subtle border border-theme-border flex items-center justify-center text-theme-textPrimary hover:text-brand transition">
+          <i class="fas fa-bars text-sm"></i>
+        </button>
       </div>
     </nav>
+  </header>
 
-    <!-- ===== HERO SECTION ===== -->
-    <header id="about" class="bg-theme-card border border-theme-border rounded-3xl p-6 sm:p-10 lg:p-12 mb-10 relative overflow-hidden shadow-2xl transition-colors duration-300">
-      <div class="absolute -right-24 -top-24 w-96 h-96 bg-accent/10 rounded-full blur-3xl pointer-events-none"></div>
+  <!-- MAIN CONTENT -->
+  <main class="w-full max-w-5xl mx-auto px-4 sm:px-6 py-6 md:py-10">
 
-      <div class="flex flex-col-reverse lg:flex-row items-center justify-between gap-10 relative z-10">
-        <!-- Left: Text content -->
-        <div class="w-full lg:w-7/12 text-center lg:text-left">
-          
-          <!-- District Topper Badge -->
-          <div class="inline-flex items-center gap-2.5 bg-accent-light border border-accent/30 px-4 py-2 rounded-full text-xs font-bold text-accent mb-6 shadow-sm">
-            <span class="w-2.5 h-2.5 rounded-full bg-accent animate-pulse"></span>
-            <i class="fas fa-trophy"></i> 1st Rank District Topper · C.H.N.M (89.5%)
+    <!-- HERO SECTION -->
+    <section id="home" class="mb-14 pt-4">
+      <div class="flex flex-col-reverse md:flex-row items-center justify-between gap-8 md:gap-12">
+        <div class="w-full md:w-1/2 text-center md:text-left">
+          <div class="inline-flex items-center gap-2 bg-theme-subtle border border-theme-border px-3.5 py-1.5 rounded-full text-xs font-semibold text-brand mb-4">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> 1st Rank District Topper · C.H.N.M (89.5%)
           </div>
-
-          <h1 class="text-3xl sm:text-5xl lg:text-5xl font-extrabold text-theme-heading tracking-tight leading-tight mb-4">
-            IT Specialist & <br class="hidden sm:inline">
-            <span class="text-accent">Digital Solutions Expert</span>
-          </h1>
-
-          <p class="text-theme-body text-sm sm:text-base leading-relaxed mb-8 max-w-2xl">
-            NCVT-certified C.O.P.A & C.H.N.M professional with 1-year government apprenticeship experience. Expertise in e-governance portal management, computer networking, hardware maintenance, advanced MS Office, and video editing.
+          <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight tracking-tight mb-2">Hello 👋 <br>I'm <span class="text-brand">Prince Verma</span></h1>
+          <div class="text-lg sm:text-xl font-bold text-brand mt-1 mb-4 tracking-tight flex items-center justify-center md:justify-start gap-2 flex-wrap">
+            <span>IT Specialist</span> <span class="text-theme-border">•</span> <span>Web Developer</span> <span class="text-theme-border">•</span> <span>Video Editor</span> <span class="text-theme-border">•</span> <span>Graphic Designer</span>
+          </div>
+          <p class="text-theme-textSecondary text-xs sm:text-sm leading-relaxed mb-6 max-w-lg">
+            NCVT-certified C.O.P.A & C.H.N.M professional with 1-year government apprenticeship experience at GSSS Pinjore. Specialized in computer networking, e-governance portals, responsive web applications, and publication design.
           </p>
-
-          <!-- Custom Glowing Pill Buttons -->
-          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 mb-8">
-            <a href="#contact" class="btn-pill-primary font-bold px-7 py-3 rounded-full text-xs sm:text-sm flex items-center gap-2">
-              <i class="fas fa-paper-plane text-xs"></i> Got a Project?
-            </a>
-            <a href="#credentials" class="btn-pill-outline font-bold px-7 py-3 rounded-full text-xs sm:text-sm flex items-center gap-2">
-              <i class="fas fa-file-alt text-xs"></i> View Credentials
-            </a>
-          </div>
-
-          <!-- Quick Stats -->
-          <div class="grid grid-cols-3 gap-4 pt-6 border-t border-theme-border/60">
-            <div>
-              <div class="text-2xl sm:text-3xl font-extrabold text-theme-heading">89.5%</div>
-              <div class="text-[11px] text-theme-muted font-bold uppercase tracking-wider mt-0.5">District Rank 1</div>
-            </div>
-            <div>
-              <div class="text-2xl sm:text-3xl font-extrabold text-theme-heading">1+ Year</div>
-              <div class="text-[11px] text-theme-muted font-bold uppercase tracking-wider mt-0.5">Govt Apprentice</div>
-            </div>
-            <div>
-              <div class="text-2xl sm:text-3xl font-extrabold text-theme-heading">100%</div>
-              <div class="text-[11px] text-theme-muted font-bold uppercase tracking-wider mt-0.5">Data Accuracy</div>
-            </div>
+          <div class="flex flex-wrap gap-3 justify-center md:justify-start">
+            <a href="#contact" class="bg-brand text-theme-bg font-bold px-6 py-3 rounded-xl text-xs sm:text-sm hover:opacity-90 transition shadow-lg shadow-brand/20 flex items-center gap-2"><i class="fas fa-paper-plane"></i> Got a project?</a>
+            <a href="https://docs.google.com/document/d/1S6W82L9vL-3k-Example/view" target="_blank" class="border border-theme-border bg-theme-subtle text-theme-textPrimary font-semibold px-6 py-3 rounded-xl text-xs sm:text-sm hover:border-brand hover:text-brand transition flex items-center gap-2"><i class="fas fa-arrow-up-right-from-square text-xs"></i> Open Resume</a>
           </div>
         </div>
 
-        <!-- Right: Profile Image -->
-        <div class="w-full lg:w-5/12 flex justify-center">
+        <div class="w-full md:w-1/2 flex justify-center md:justify-end">
           <div class="relative group">
-            <div class="absolute -inset-1.5 bg-gradient-to-r from-accent to-orange-400 rounded-3xl blur-md opacity-40 group-hover:opacity-75 transition duration-500"></div>
-            <div class="relative w-56 h-56 sm:w-64 sm:h-64 lg:w-72 lg:h-72 rounded-2xl overflow-hidden border-2 border-theme-border bg-theme-subtle shadow-2xl">
-              <img 
-                src="https://cinematicharyana.princeverma.workers.dev/img/uploads/1790164447825-ev42dsze.jpeg" 
-                alt="Prince Verma" 
-                class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500"
-                onerror="this.onerror=null; this.src='https://placehold.co/400x400/12121f/ff6b4a?text=PV';"
-              />
+            <div class="absolute -inset-1 bg-gradient-to-r from-brand to-orange-500 rounded-full blur opacity-30 group-hover:opacity-60 transition duration-1000"></div>
+            <div class="relative w-44 h-44 sm:w-56 sm:h-56 md:w-64 md:h-64 rounded-full border-4 border-brand p-1 bg-theme-card overflow-hidden shadow-2xl">
+              <img src="https://cinematicharyana.princeverma.workers.dev/img/uploads/1790164447825-ev42dsze.jpeg" alt="Prince Verma" class="w-full h-full object-cover rounded-full group-hover:scale-105 transition duration-500">
             </div>
           </div>
         </div>
       </div>
-    </header>
+    </section>
 
-    <!-- ===== CONTINUOUS ANIMATED SKILLS MARQUEE STRIP ===== -->
-    <div class="bg-theme-card border border-theme-border rounded-2xl p-4 mb-10 overflow-hidden relative marquee-container shadow-lg">
-      <div class="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-theme-card to-transparent z-10 pointer-events-none"></div>
-      <div class="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-theme-card to-transparent z-10 pointer-events-none"></div>
-
-      <div class="flex whitespace-nowrap animate-marquee marquee-content items-center">
-        <!-- Set 1 -->
-        <div class="flex items-center gap-6 text-xs sm:text-sm font-bold text-theme-heading uppercase tracking-wider pr-6">
-          <span class="inline-flex items-center gap-2 bg-theme-subtle border border-theme-border px-4 py-2 rounded-full"><i class="fas fa-network-wired text-accent"></i> Hardware & Networking</span>
-          <span class="text-accent font-extrabold text-base">•</span>
-          <span class="inline-flex items-center gap-2 bg-theme-subtle border border-theme-border px-4 py-2 rounded-full"><i class="fas fa-server text-accent"></i> E-Governance Portals</span>
-          <span class="text-accent font-extrabold text-base">•</span>
-          <span class="inline-flex items-center gap-2 bg-theme-subtle border border-theme-border px-4 py-2 rounded-full"><i class="fas fa-file-excel text-accent"></i> Advanced MS Office</span>
-          <span class="text-accent font-extrabold text-base">•</span>
-          <span class="inline-flex items-center gap-2 bg-theme-subtle border border-theme-border px-4 py-2 rounded-full"><i class="fas fa-video text-accent"></i> Video Editing & FX</span>
-          <span class="text-accent font-extrabold text-base">•</span>
-          <span class="inline-flex items-center gap-2 bg-theme-subtle border border-theme-border px-4 py-2 rounded-full"><i class="fas fa-code text-accent"></i> Web Development</span>
-          <span class="text-accent font-extrabold text-base">•</span>
-        </div>
-
-        <!-- Set 2 (Duplicate for Infinite Loop) -->
-        <div class="flex items-center gap-6 text-xs sm:text-sm font-bold text-theme-heading uppercase tracking-wider pr-6">
-          <span class="inline-flex items-center gap-2 bg-theme-subtle border border-theme-border px-4 py-2 rounded-full"><i class="fas fa-network-wired text-accent"></i> Hardware & Networking</span>
-          <span class="text-accent font-extrabold text-base">•</span>
-          <span class="inline-flex items-center gap-2 bg-theme-subtle border border-theme-border px-4 py-2 rounded-full"><i class="fas fa-server text-accent"></i> E-Governance Portals</span>
-          <span class="text-accent font-extrabold text-base">•</span>
-          <span class="inline-flex items-center gap-2 bg-theme-subtle border border-theme-border px-4 py-2 rounded-full"><i class="fas fa-file-excel text-accent"></i> Advanced MS Office</span>
-          <span class="text-accent font-extrabold text-base">•</span>
-          <span class="inline-flex items-center gap-2 bg-theme-subtle border border-theme-border px-4 py-2 rounded-full"><i class="fas fa-video text-accent"></i> Video Editing & FX</span>
-          <span class="text-accent font-extrabold text-base">•</span>
-          <span class="inline-flex items-center gap-2 bg-theme-subtle border border-theme-border px-4 py-2 rounded-full"><i class="fas fa-code text-accent"></i> Web Development</span>
-          <span class="text-accent font-extrabold text-base">•</span>
-        </div>
+    <!-- MARQUEE -->
+    <div class="w-full overflow-hidden border-y border-theme-border py-4 mb-14 bg-theme-card/50">
+      <div class="animate-marquee items-center gap-8 text-xs font-semibold text-theme-textSecondary uppercase tracking-widest">
+        <span><i class="fas fa-network-wired text-brand mr-2"></i> Hardware & Networking</span><span>•</span>
+        <span><i class="fas fa-landmark text-brand mr-2"></i> E-Governance Portals</span><span>•</span>
+        <span><i class="fas fa-file-excel text-brand mr-2"></i> Advanced MS Office</span><span>•</span>
+        <span><i class="fas fa-film text-brand mr-2"></i> Video Editing & FX</span><span>•</span>
+        <span><i class="fas fa-code text-brand mr-2"></i> Full-Stack Web Development</span><span>•</span>
+        <span><i class="fas fa-book-open text-brand mr-2"></i> CorelDraw Vector Book Covers</span>
       </div>
     </div>
 
-    <!-- ===== SERVICES SECTION ===== -->
-    <section id="services" class="mb-14">
-      <div class="mb-8">
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-theme-heading tracking-tight">Technical & Creative Services</h2>
-        <p class="text-theme-body text-xs sm:text-sm mt-1">Comprehensive IT support, office automation, and media design solutions</p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Service 1 -->
-        <div class="bg-theme-card border border-theme-border rounded-2xl p-6 hover:border-accent/50 transition-all duration-300 group shadow-md hover:shadow-xl">
-          <div class="w-12 h-12 rounded-xl bg-accent-light border border-accent/20 flex items-center justify-center text-accent text-xl mb-4 group-hover:scale-110 transition-transform">
-            <i class="fas fa-desktop"></i>
-          </div>
-          <h3 class="text-lg font-bold text-theme-heading mb-2">Hardware & Systems</h3>
-          <p class="text-theme-body text-xs leading-relaxed mb-4">PC assembly, troubleshooting RAM/SMPS, OS installation (Windows & Linux), driver configurations, and peripheral setup.</p>
-          <div class="flex flex-wrap gap-1.5">
-            <span class="bg-theme-subtle text-theme-body text-[11px] font-semibold px-2.5 py-1 rounded-lg border border-theme-border">Diagnostics</span>
-            <span class="bg-theme-subtle text-theme-body text-[11px] font-semibold px-2.5 py-1 rounded-lg border border-theme-border">OS Setup</span>
-          </div>
+    <!-- ABOUT SECTION -->
+    <section id="about" class="mb-14">
+      <div class="flex flex-col md:flex-row gap-8 items-stretch">
+        <div class="w-full md:w-5/12 space-y-3 flex flex-col justify-between">
+          <div class="bg-theme-card border border-theme-border rounded-2xl p-4 flex items-center gap-4"><div class="w-10 h-10 rounded-xl bg-brand/10 border border-brand/20 flex items-center justify-center text-brand"><i class="fas fa-code"></i></div><div><h3 class="text-sm font-bold">Website Development</h3><p class="text-xs text-theme-textSecondary">Full-stack web apps & portals</p></div></div>
+          <div class="bg-theme-card border border-theme-border rounded-2xl p-4 flex items-center gap-4"><div class="w-10 h-10 rounded-xl bg-brand/10 border border-brand/20 flex items-center justify-center text-brand"><i class="fas fa-landmark"></i></div><div><h3 class="text-sm font-bold">E-Governance Portals</h3><p class="text-xs text-theme-textSecondary">UDISE+, MIS Haryana & BSEH</p></div></div>
+          <div class="bg-theme-card border border-theme-border rounded-2xl p-4 flex items-center gap-4"><div class="w-10 h-10 rounded-xl bg-brand/10 border border-brand/20 flex items-center justify-center text-brand"><i class="fas fa-network-wired"></i></div><div><h3 class="text-sm font-bold">Hardware & Networking</h3><p class="text-xs text-theme-textSecondary">Diagnostics, crimping & sysadmin</p></div></div>
+          <div class="bg-theme-card border border-theme-border rounded-2xl p-4 flex items-center gap-4"><div class="w-10 h-10 rounded-xl bg-brand/10 border border-brand/20 flex items-center justify-center text-brand"><i class="fas fa-paint-brush"></i></div><div><h3 class="text-sm font-bold">Creations & Graphic Design</h3><p class="text-xs text-theme-textSecondary">CorelDraw Book Covers & Posters</p></div></div>
         </div>
 
-        <!-- Service 2 -->
-        <div class="bg-theme-card border border-theme-border rounded-2xl p-6 hover:border-accent/50 transition-all duration-300 group shadow-md hover:shadow-xl">
-          <div class="w-12 h-12 rounded-xl bg-accent-light border border-accent/20 flex items-center justify-center text-accent text-xl mb-4 group-hover:scale-110 transition-transform">
-            <i class="fas fa-network-wired"></i>
+        <div class="w-full md:w-7/12 bg-theme-card border border-theme-border rounded-2xl p-6 sm:p-8 flex flex-col justify-between">
+          <div>
+            <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight mb-4">About me</h2>
+            <p class="text-theme-textSecondary text-xs sm:text-sm leading-relaxed mb-4">I am Prince Verma, a technology specialist and web developer from Haryana. I topped Panchkula district in C.H.N.M (89.5% marks) under NCVT and completed 1 full year as a government Apprentice / Data Entry Operator at GSSS Pinjore.</p>
+            <p class="text-theme-textSecondary text-xs sm:text-sm leading-relaxed mb-6">My skill set unites core networking and system administration with full-stack coding, portal data management, and visual publication designs including book covers, posters, and regional media graphics.</p>
           </div>
-          <h3 class="text-lg font-bold text-theme-heading mb-2">Networking Setup</h3>
-          <p class="text-theme-body text-xs leading-relaxed mb-4">LAN/WAN infrastructure, router & switch configuration, RJ45 crimping, TCP/IP diagnostics, and wireless AP tuning.</p>
-          <div class="flex flex-wrap gap-1.5">
-            <span class="bg-theme-subtle text-theme-body text-[11px] font-semibold px-2.5 py-1 rounded-lg border border-theme-border">RJ45 Crimping</span>
-            <span class="bg-theme-subtle text-theme-body text-[11px] font-semibold px-2.5 py-1 rounded-lg border border-theme-border">Router Config</span>
-          </div>
-        </div>
-
-        <!-- Service 3 -->
-        <div class="bg-theme-card border border-theme-border rounded-2xl p-6 hover:border-accent/50 transition-all duration-300 group shadow-md hover:shadow-xl">
-          <div class="w-12 h-12 rounded-xl bg-accent-light border border-accent/20 flex items-center justify-center text-accent text-xl mb-4 group-hover:scale-110 transition-transform">
-            <i class="fas fa-database"></i>
-          </div>
-          <h3 class="text-lg font-bold text-theme-heading mb-2">E-Governance & Data</h3>
-          <p class="text-theme-body text-xs leading-relaxed mb-4">Handling UDISE+, MIS Haryana, BSEH portals. High-speed typing, advanced Excel formulas (Pivot, VLOOKUP), and records.</p>
-          <div class="flex flex-wrap gap-1.5">
-            <span class="bg-theme-subtle text-theme-body text-[11px] font-semibold px-2.5 py-1 rounded-lg border border-theme-border">UDISE+</span>
-            <span class="bg-theme-subtle text-theme-body text-[11px] font-semibold px-2.5 py-1 rounded-lg border border-theme-border">MIS Haryana</span>
-          </div>
-        </div>
-
-        <!-- Service 4 -->
-        <div class="bg-theme-card border border-theme-border rounded-2xl p-6 hover:border-accent/50 transition-all duration-300 group shadow-md hover:shadow-xl">
-          <div class="w-12 h-12 rounded-xl bg-accent-light border border-accent/20 flex items-center justify-center text-accent text-xl mb-4 group-hover:scale-110 transition-transform">
-            <i class="fas fa-video"></i>
-          </div>
-          <h3 class="text-lg font-bold text-theme-heading mb-2">Video Editing & FX</h3>
-          <p class="text-theme-body text-xs leading-relaxed mb-4">Post-production, motion graphic transitions, title animations, and promo editing using Adobe Premiere Pro & After Effects.</p>
-          <div class="flex flex-wrap gap-1.5">
-            <span class="bg-theme-subtle text-theme-body text-[11px] font-semibold px-2.5 py-1 rounded-lg border border-theme-border">Premiere Pro</span>
-            <span class="bg-theme-subtle text-theme-body text-[11px] font-semibold px-2.5 py-1 rounded-lg border border-theme-border">After Effects</span>
-          </div>
-        </div>
-
-        <!-- Service 5 -->
-        <div class="bg-theme-card border border-theme-border rounded-2xl p-6 hover:border-accent/50 transition-all duration-300 group shadow-md hover:shadow-xl">
-          <div class="w-12 h-12 rounded-xl bg-accent-light border border-accent/20 flex items-center justify-center text-accent text-xl mb-4 group-hover:scale-110 transition-transform">
-            <i class="fas fa-paint-brush"></i>
-          </div>
-          <h3 class="text-lg font-bold text-theme-heading mb-2">Graphic & Vector Art</h3>
-          <p class="text-theme-body text-xs leading-relaxed mb-4">Banner graphics, social media assets, vector illustrations, and print design utilizing Adobe Photoshop and CorelDraw.</p>
-          <div class="flex flex-wrap gap-1.5">
-            <span class="bg-theme-subtle text-theme-body text-[11px] font-semibold px-2.5 py-1 rounded-lg border border-theme-border">Photoshop</span>
-            <span class="bg-theme-subtle text-theme-body text-[11px] font-semibold px-2.5 py-1 rounded-lg border border-theme-border">CorelDraw</span>
-          </div>
-        </div>
-
-        <!-- Service 6 -->
-        <div class="bg-theme-card border border-theme-border rounded-2xl p-6 hover:border-accent/50 transition-all duration-300 group shadow-md hover:shadow-xl">
-          <div class="w-12 h-12 rounded-xl bg-accent-light border border-accent/20 flex items-center justify-center text-accent text-xl mb-4 group-hover:scale-110 transition-transform">
-            <i class="fas fa-code"></i>
-          </div>
-          <h3 class="text-lg font-bold text-theme-heading mb-2">Web Development</h3>
-          <p class="text-theme-body text-xs leading-relaxed mb-4">Building responsive single-page platforms using HTML5, CSS3, JavaScript, with Node.js, PHP, and MySQL backend basics.</p>
-          <div class="flex flex-wrap gap-1.5">
-            <span class="bg-theme-subtle text-theme-body text-[11px] font-semibold px-2.5 py-1 rounded-lg border border-theme-border">Tailwind / HTML</span>
-            <span class="bg-theme-subtle text-theme-body text-[11px] font-semibold px-2.5 py-1 rounded-lg border border-theme-border">JavaScript</span>
+          <div class="grid grid-cols-3 gap-4 pt-6 border-t border-theme-border text-center sm:text-left">
+            <div><div class="text-2xl sm:text-3xl font-extrabold">1st Rank</div><div class="text-[10px] text-theme-textSecondary font-bold uppercase mt-0.5">NCVT PANCHKULA</div></div>
+            <div><div class="text-2xl sm:text-3xl font-extrabold">1+ Year</div><div class="text-[10px] text-theme-textSecondary font-bold uppercase mt-0.5">GOVT APPRENTICE</div></div>
+            <div><div class="text-2xl sm:text-3xl font-extrabold">100 %</div><div class="text-[10px] text-theme-textSecondary font-bold uppercase mt-0.5">DATA PRECISION</div></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ===== PROJECTS SECTION ===== -->
-    <section id="projects" class="mb-14">
+    <!-- EXPERIENCE & RESUME DETAILS -->
+    <section id="experience" class="mb-14">
       <div class="mb-8">
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-theme-heading tracking-tight">Featured Live Projects</h2>
-        <p class="text-theme-body text-xs sm:text-sm mt-1">Real-world live deployments and portals</p>
+        <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight mb-1">Experience & Resume Details</h2>
+        <p class="text-theme-textSecondary text-xs sm:text-sm">Detailed career progression, government apprenticeship experience, and verified academic credentials.</p>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <!-- Project 1 -->
-        <div class="bg-theme-card border border-theme-border rounded-2xl p-5 flex flex-col justify-between hover:border-accent/50 transition-all duration-300 shadow-md group">
-          <div>
-            <div class="flex justify-between items-center mb-4">
-              <span class="w-10 h-10 rounded-xl bg-theme-subtle flex items-center justify-center text-accent text-lg"><i class="fas fa-landmark"></i></span>
-              <span class="text-[10px] font-bold text-accent bg-accent-light px-2.5 py-1 rounded-full border border-accent/20">E-Governance</span>
-            </div>
-            <h3 class="text-base font-bold text-theme-heading mb-1 group-hover:text-accent transition-colors">missionharyana.in</h3>
-            <p class="text-theme-body text-xs leading-relaxed mb-4">Portal for state e-governance initiatives, UDISE+ sync, and public service delivery in Haryana.</p>
-          </div>
-          <a href="https://missionharyana.in" target="_blank" rel="noopener noreferrer" class="btn-pill-outline text-xs font-semibold py-2 px-4 rounded-xl flex items-center justify-between">
-            <span>Visit Portal</span>
-            <i class="fas fa-arrow-up-right-from-square text-[10px]"></i>
-          </a>
-        </div>
-
-        <!-- Project 2 -->
-        <div class="bg-theme-card border border-theme-border rounded-2xl p-5 flex flex-col justify-between hover:border-accent/50 transition-all duration-300 shadow-md group">
-          <div>
-            <div class="flex justify-between items-center mb-4">
-              <span class="w-10 h-10 rounded-xl bg-theme-subtle flex items-center justify-center text-accent text-lg"><i class="fas fa-film"></i></span>
-              <span class="text-[10px] font-bold text-accent bg-accent-light px-2.5 py-1 rounded-full border border-accent/20">Media Portfolio</span>
-            </div>
-            <h3 class="text-base font-bold text-theme-heading mb-1 group-hover:text-accent transition-colors">cinematicharyana.com</h3>
-            <p class="text-theme-body text-xs leading-relaxed mb-4">Creative video editing and motion graphics showcase for regional film and cinematic projects.</p>
-          </div>
-          <a href="https://cinematicharyana.com" target="_blank" rel="noopener noreferrer" class="btn-pill-outline text-xs font-semibold py-2 px-4 rounded-xl flex items-center justify-between">
-            <span>Visit Showcase</span>
-            <i class="fas fa-arrow-up-right-from-square text-[10px]"></i>
-          </a>
-        </div>
-
-        <!-- Project 3 -->
-        <div class="bg-theme-card border border-theme-border rounded-2xl p-5 flex flex-col justify-between hover:border-accent/50 transition-all duration-300 shadow-md group">
-          <div>
-            <div class="flex justify-between items-center mb-4">
-              <span class="w-10 h-10 rounded-xl bg-theme-subtle flex items-center justify-center text-accent text-lg"><i class="fas fa-users"></i></span>
-              <span class="text-[10px] font-bold text-accent bg-accent-light px-2.5 py-1 rounded-full border border-accent/20">Community</span>
-            </div>
-            <h3 class="text-base font-bold text-theme-heading mb-1 group-hover:text-accent transition-colors">26club.in</h3>
-            <p class="text-theme-body text-xs leading-relaxed mb-4">Community platform featuring member management, event updates, and digital engagement tools.</p>
-          </div>
-          <a href="https://26club.in" target="_blank" rel="noopener noreferrer" class="btn-pill-outline text-xs font-semibold py-2 px-4 rounded-xl flex items-center justify-between">
-            <span>Visit Platform</span>
-            <i class="fas fa-arrow-up-right-from-square text-[10px]"></i>
-          </a>
-        </div>
-
-        <!-- Project 4 -->
-        <div class="bg-theme-card border border-theme-border rounded-2xl p-5 flex flex-col justify-between hover:border-accent/50 transition-all duration-300 shadow-md group">
-          <div>
-            <div class="flex justify-between items-center mb-4">
-              <span class="w-10 h-10 rounded-xl bg-theme-subtle flex items-center justify-center text-accent text-lg"><i class="fas fa-gamepad"></i></span>
-              <span class="text-[10px] font-bold text-accent bg-accent-light px-2.5 py-1 rounded-full border border-accent/20">Web Portal</span>
-            </div>
-            <h3 class="text-base font-bold text-theme-heading mb-1 group-hover:text-accent transition-colors">gswin.site</h3>
-            <p class="text-slate-400 text-xs leading-relaxed mb-4 text-theme-body">Digital gaming and reward platform with user dashboards and interactive frontend design.</p>
-          </div>
-          <a href="https://gswin.site" target="_blank" rel="noopener noreferrer" class="btn-pill-outline text-xs font-semibold py-2 px-4 rounded-xl flex items-center justify-between">
-            <span>Visit Application</span>
-            <i class="fas fa-arrow-up-right-from-square text-[10px]"></i>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== CREDENTIALS & EXPERIENCE SECTION ===== -->
-    <section id="credentials" class="mb-14">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        
-        <!-- Qualifications -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Work Experience -->
         <div>
-          <h2 class="text-xl font-extrabold text-theme-heading mb-6 flex items-center gap-2.5">
-            <i class="fas fa-graduation-cap text-accent"></i> Verified Credentials
-          </h2>
-          <div class="space-y-4">
-            
-            <!-- District Topper Card -->
-            <div class="bg-theme-card border-2 border-accent/40 p-5 rounded-2xl relative overflow-hidden shadow-lg">
-              <div class="absolute right-0 top-0 bg-accent text-white text-[10px] font-extrabold uppercase px-3 py-1 rounded-bl-xl shadow-md">
-                District Rank 1
-              </div>
-              <h3 class="text-base font-bold text-theme-heading">C.H.N.M (Hardware & Networking)</h3>
-              <p class="text-accent text-xs font-bold mt-0.5">Govt ITI Bitna · NCVT Certified (89.5% Marks)</p>
-              <p class="text-theme-body text-xs mt-2 leading-relaxed">Achieved 1st Rank in Panchkula District. Specialized in hardware assembly, LAN/WAN setup, TCP/IP, and troubleshooting.</p>
-            </div>
-
-            <div class="bg-theme-card border border-theme-border p-5 rounded-2xl shadow-sm">
-              <h3 class="text-base font-bold text-theme-heading">C.O.P.A (Computer Operator)</h3>
-              <p class="text-accent text-xs font-bold mt-0.5">Govt ITI Bitna · NCVT Certified</p>
-              <p class="text-theme-body text-xs mt-2 leading-relaxed">Office automation, data processing, programming fundamentals, and database maintenance.</p>
-            </div>
-
-            <div class="bg-theme-card border border-theme-border p-5 rounded-2xl shadow-sm">
-              <h3 class="text-base font-bold text-theme-heading">Bachelor of Arts (B.A.)</h3>
-              <p class="text-accent text-xs font-bold mt-0.5">IGNOU · July 2025 Session (Pursuing)</p>
-              <p class="text-theme-body text-xs mt-2 leading-relaxed">Focusing on humanities and computer applications.</p>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- Experience -->
-        <div>
-          <h2 class="text-xl font-extrabold text-theme-heading mb-6 flex items-center gap-2.5">
-            <i class="fas fa-briefcase text-accent"></i> Work Experience
-          </h2>
-          <div class="space-y-4">
-            
-            <div class="bg-theme-card border border-theme-border p-5 rounded-2xl shadow-sm">
-              <div class="flex justify-between items-start gap-2 mb-2">
-                <div>
-                  <h3 class="text-base font-bold text-theme-heading">Apprentice / Data Entry Operator</h3>
-                  <p class="text-accent text-xs font-bold">GSSS Pinjore (Govt. Senior Secondary School)</p>
+          <h3 class="text-lg font-bold mb-6 flex items-center gap-2"><i class="fas fa-briefcase text-brand"></i> Work Experience</h3>
+          <div class="space-y-6 relative border-l-2 border-theme-border pl-6 ml-3">
+            <div class="relative">
+              <span class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-brand border-4 border-theme-bg"></span>
+              <div class="bg-theme-card border border-theme-border rounded-2xl p-5">
+                <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                  <h4 class="text-sm font-bold">Apprentice / Data Entry Operator</h4>
+                  <span class="text-[10px] font-bold text-brand bg-brand/10 border border-brand/20 px-2.5 py-1 rounded-full">Sep 2024 – Oct 2025</span>
                 </div>
-                <span class="text-[10px] font-bold bg-theme-subtle text-theme-heading px-2.5 py-1 rounded-full border border-theme-border">Sep 2024 – Oct 2025</span>
-              </div>
-              <ul class="text-theme-body text-xs space-y-2 leading-relaxed">
-                <li class="flex items-start gap-2"><i class="fas fa-check text-accent mt-0.5 text-[10px]"></i> Managed UDISE+ and MIS Haryana e-governance state portals with high precision.</li>
-                <li class="flex items-start gap-2"><i class="fas fa-check text-accent mt-0.5 text-[10px]"></i> Handled hardware troubleshooting, software updates, and local LAN network maintenance.</li>
-                <li class="flex items-start gap-2"><i class="fas fa-check text-accent mt-0.5 text-[10px]"></i> Compiled institutional reports and databases using MS Excel (VLOOKUP, Pivot) and Word.</li>
-              </ul>
-            </div>
-
-            <div class="bg-theme-card border border-theme-border p-5 rounded-2xl shadow-sm">
-              <h3 class="text-base font-bold text-theme-heading mb-2">Location & Service Areas</h3>
-              <p class="text-theme-body text-xs leading-relaxed mb-3">
-                Available for on-site and remote IT operations, portal management, and graphic design across <strong class="text-theme-heading">Gurugram</strong> and <strong class="text-theme-heading">Panchkula / Chandigarh</strong> region.
-              </p>
-              <div class="flex flex-wrap gap-2 text-xs text-theme-heading font-semibold">
-                <span class="bg-theme-subtle px-3 py-1 rounded-lg border border-theme-border"><i class="fas fa-location-dot text-accent mr-1"></i> Gurugram, HR</span>
-                <span class="bg-theme-subtle px-3 py-1 rounded-lg border border-theme-border"><i class="fas fa-location-dot text-accent mr-1"></i> Panchkula, HR</span>
+                <div class="text-xs text-brand font-semibold mb-3">GSSS Pinjore (Government Senior Secondary School)</div>
+                <ul class="text-xs text-theme-textSecondary space-y-2 leading-relaxed">
+                  <li class="flex items-start gap-2"><i class="fas fa-check text-brand text-[10px] mt-1"></i> Administered UDISE+, MIS Haryana, and BSEH examination portals with zero error rate.</li>
+                  <li class="flex items-start gap-2"><i class="fas fa-check text-brand text-[10px] mt-1"></i> Handled hardware diagnostic repairs, system formatting, and RJ45 network cabling.</li>
+                  <li class="flex items-start gap-2"><i class="fas fa-check text-brand text-[10px] mt-1"></i> Managed complex MS Excel sheets with VLOOKUP, pivot tables, and data reports.</li>
+                </ul>
               </div>
             </div>
-
           </div>
         </div>
 
+        <!-- Academic Qualifications -->
+        <div>
+          <h3 class="text-lg font-bold mb-6 flex items-center gap-2"><i class="fas fa-graduation-cap text-brand"></i> Academic Qualifications</h3>
+          <div class="space-y-6 relative border-l-2 border-theme-border pl-6 ml-3">
+            <div class="relative">
+              <span class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-brand border-4 border-theme-bg"></span>
+              <div class="bg-theme-card border-2 border-brand rounded-2xl p-5 shadow-lg shadow-brand/10">
+                <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                  <h4 class="text-sm font-bold">C.H.N.M (District Rank 1 Topper)</h4>
+                  <span class="text-[10px] font-black text-theme-bg bg-brand px-2.5 py-1 rounded-full uppercase">89.5% RANK 1</span>
+                </div>
+                <div class="text-xs text-brand font-semibold mb-2">Govt ITI Bitna · NCVT Certified</div>
+                <p class="text-xs text-theme-textSecondary">Secured 1st Rank across Panchkula district in Computer Hardware & Network Maintenance.</p>
+              </div>
+            </div>
+            <div class="relative">
+              <span class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-theme-border border-4 border-theme-bg"></span>
+              <div class="bg-theme-card border border-theme-border rounded-2xl p-5">
+                <h4 class="text-sm font-bold mb-1">C.O.P.A (Computer Operator & Programming)</h4>
+                <div class="text-xs text-brand font-semibold mb-2">Govt ITI Bitna · NCVT Certified</div>
+                <p class="text-xs text-theme-textSecondary">Trained in SQL databases, JavaScript, HTML5, Linux commands, and office automation.</p>
+              </div>
+            </div>
+            <div class="relative">
+              <span class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-theme-border border-4 border-theme-bg"></span>
+              <div class="bg-theme-card border border-theme-border rounded-2xl p-5">
+                <h4 class="text-sm font-bold mb-1">Bachelor of Arts (B.A.)</h4>
+                <div class="text-xs text-brand font-semibold mb-2">IGNOU · July 2025 Session (Pursuing)</div>
+                <p class="text-xs text-theme-textSecondary">Higher degree studies focused on public administration and communication.</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- ===== CONTACT & FOOTER ===== -->
-    <footer id="contact" class="bg-theme-card border border-theme-border rounded-3xl p-6 sm:p-10 shadow-2xl transition-colors duration-300">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-        <div>
-          <h2 class="text-2xl sm:text-3xl font-extrabold text-theme-heading tracking-tight mb-2">Have a project? <br>Let's talk!</h2>
-          <p class="text-theme-body text-xs sm:text-sm mb-6 max-w-sm leading-relaxed">Reach out for IT support, e-governance portal management, video editing, or web collaborations.</p>
-          
-          <div class="space-y-3.5 text-xs sm:text-sm text-theme-heading">
-            <div class="flex items-center gap-3">
-              <span class="w-9 h-9 rounded-xl bg-theme-subtle border border-theme-border flex items-center justify-center text-accent"><i class="fas fa-phone-alt"></i></span>
-              <span class="font-semibold">+91 8901099233</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <span class="w-9 h-9 rounded-xl bg-theme-subtle border border-theme-border flex items-center justify-center text-accent"><i class="fas fa-envelope"></i></span>
-              <span class="font-semibold">princepublicity@gmail.com</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <span class="w-9 h-9 rounded-xl bg-theme-subtle border border-theme-border flex items-center justify-center text-accent"><i class="fas fa-map-marker-alt"></i></span>
-              <span class="font-semibold">Gurugram / Panchkula, Haryana</span>
-            </div>
+    <!-- LIVE PORTALS -->
+    <section id="projects" class="mb-14">
+      <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight mb-6">Live Deployed Web Portals</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="project-card bg-theme-card border border-theme-border rounded-2xl p-5 flex flex-col justify-between">
+          <div><h3 class="text-base font-bold mb-1">missionharyana.in</h3><p class="text-theme-textSecondary text-xs mb-4">E-governance portal for state initiatives and database alignment.</p></div>
+          <a href="https://missionharyana.in" target="_blank" class="text-xs font-bold text-brand hover:underline">Visit Site <i class="fas fa-arrow-up-right-from-square text-[10px]"></i></a>
+        </div>
+        <div class="project-card bg-theme-card border border-theme-border rounded-2xl p-5 flex flex-col justify-between">
+          <div><h3 class="text-base font-bold mb-1">cinematicharyana.com</h3><p class="text-theme-textSecondary text-xs mb-4">Creative video editing and motion graphics showcase for regional film projects.</p></div>
+          <a href="https://cinematicharyana.com" target="_blank" class="text-xs font-bold text-brand hover:underline">Visit Site <i class="fas fa-arrow-up-right-from-square text-[10px]"></i></a>
+        </div>
+        <div class="project-card bg-theme-card border border-theme-border rounded-2xl p-5 flex flex-col justify-between">
+          <div><h3 class="text-base font-bold mb-1">26club.in</h3><p class="text-theme-textSecondary text-xs mb-4">Community portal featuring member management and responsive frontend UI.</p></div>
+          <a href="https://26club.in" target="_blank" class="text-xs font-bold text-brand hover:underline">Visit Site <i class="fas fa-arrow-up-right-from-square text-[10px]"></i></a>
+        </div>
+        <div class="project-card bg-theme-card border border-theme-border rounded-2xl p-5 flex flex-col justify-between">
+          <div><h3 class="text-base font-bold mb-1">gswin.site</h3><p class="text-theme-textSecondary text-xs mb-4">Interactive digital gaming portal featuring dynamic logic and user dashboards.</p></div>
+          <a href="https://gswin.site" target="_blank" class="text-xs font-bold text-brand hover:underline">Visit Site <i class="fas fa-arrow-up-right-from-square text-[10px]"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="mb-14 pt-6 border-t border-theme-border">
+      <div class="flex flex-col md:flex-row justify-between gap-8">
+        <div class="w-full md:w-1/2">
+          <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight mb-2">Have a project?<br>Let's talk!</h2>
+          <p class="text-theme-textSecondary text-xs sm:text-sm mb-6">Reach out for IT infrastructure support, e-governance solutions, web apps, or video editing.</p>
+          <div class="space-y-3 text-xs sm:text-sm">
+            <div class="flex items-center gap-3"><i class="fas fa-phone-alt text-brand w-5"></i> +91 8901099233</div>
+            <div class="flex items-center gap-3"><i class="fas fa-envelope text-brand w-5"></i> princepublicity@gmail.com</div>
+            <div class="flex items-center gap-3"><i class="fas fa-map-marker-alt text-brand w-5"></i> Gurugram / Panchkula, Haryana</div>
           </div>
         </div>
-
-        <!-- Contact Form -->
-        <form action="mailto:princepublicity@gmail.com" method="post" enctype="text/plain" class="space-y-3">
-          <input type="text" name="Name" placeholder="Your Name" required class="w-full bg-theme-subtle border border-theme-border rounded-xl px-4 py-3 text-xs text-theme-heading placeholder:text-theme-muted focus:outline-none focus:border-accent transition">
-          <input type="email" name="Email" placeholder="Your Email Address" required class="w-full bg-theme-subtle border border-theme-border rounded-xl px-4 py-3 text-xs text-theme-heading placeholder:text-theme-muted focus:outline-none focus:border-accent transition">
-          <textarea name="Message" placeholder="Your Message or Project Details" rows="3" required class="w-full bg-theme-subtle border border-theme-border rounded-xl px-4 py-3 text-xs text-theme-heading placeholder:text-theme-muted focus:outline-none focus:border-accent transition resize-none"></textarea>
-          <button type="submit" class="btn-pill-primary w-full font-bold py-3 rounded-xl text-xs uppercase tracking-wider">
-            Send Message <i class="fas fa-paper-plane ml-1"></i>
-          </button>
+        <form action="mailto:princepublicity@gmail.com" method="post" class="w-full md:w-1/2 flex flex-col gap-3">
+          <input type="text" placeholder="Name" required class="bg-theme-card border border-theme-border rounded-xl px-4 py-3 text-xs text-theme-textPrimary focus:outline-none focus:border-brand">
+          <input type="email" placeholder="Email" required class="bg-theme-card border border-theme-border rounded-xl px-4 py-3 text-xs text-theme-textPrimary focus:outline-none focus:border-brand">
+          <textarea placeholder="Message" rows="4" required class="bg-theme-card border border-theme-border rounded-xl px-4 py-3 text-xs text-theme-textPrimary focus:outline-none focus:border-brand resize-none"></textarea>
+          <button type="submit" class="bg-brand text-theme-bg font-bold px-6 py-3 rounded-xl text-xs hover:opacity-90 shadow-lg shadow-brand/20">Submit Message</button>
         </form>
       </div>
+    </section>
 
-      <div class="pt-6 border-t border-theme-border flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-theme-muted">
-        <div>© Prince Verma · Designed with love & precision.</div>
-        <div class="flex items-center gap-4 text-theme-body text-base">
-          <a href="#" class="hover:text-accent transition-colors" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-          <a href="#" class="hover:text-accent transition-colors" title="GitHub"><i class="fab fa-github"></i></a>
-          <a href="#" class="hover:text-accent transition-colors" title="Instagram"><i class="fab fa-instagram"></i></a>
-        </div>
-      </div>
+    <footer class="mt-10 pt-6 border-t border-theme-border text-center text-xs text-theme-textSecondary">
+      Prince Verma · Designed with precision © 2026.
     </footer>
-
-  </div>
+  </main>
 
   <script>
-    // Theme Switcher Logic
-    function applyTheme(themeName) {
-      const root = document.documentElement;
-      
-      if (themeName === 'system') {
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        if (prefersDark) {
-          root.removeAttribute('data-theme');
-        } else {
-          root.setAttribute('data-theme', 'light');
-        }
-      } else if (themeName === 'dark') {
-        root.removeAttribute('data-theme');
+    function toggleMobileDrawer() {
+      document.getElementById('mobileDrawer').classList.toggle('-translate-x-full');
+      document.getElementById('drawerOverlay').classList.toggle('hidden');
+    }
+    function setTheme(theme) {
+      if (theme === 'system') {
+        const dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+        localStorage.removeItem('user-theme');
       } else {
-        root.setAttribute('data-theme', themeName);
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('user-theme', theme);
       }
     }
-
-    function changeTheme(selectedTheme) {
-      localStorage.setItem('pv_preferred_theme', selectedTheme);
-      applyTheme(selectedTheme);
-    }
-
-    // Auto-detect OS dark/light mode changes if system theme selected
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-      const savedTheme = localStorage.getItem('pv_preferred_theme') || 'system';
-      if (savedTheme === 'system') {
-        applyTheme('system');
-      }
-    });
-
-    // Initialize Theme on Page Load
-    window.onload = function() {
-      const savedTheme = localStorage.getItem('pv_preferred_theme') || 'system';
-      const selector = document.getElementById('themeSelector');
-      if (selector) selector.value = savedTheme;
-      applyTheme(savedTheme);
-    };
+    (function initTheme() {
+      const saved = localStorage.getItem('user-theme');
+      setTheme(saved || 'system');
+    })();
   </script>
 </body>
 </html>

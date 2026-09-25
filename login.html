@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login · Prince Verma Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { background-color: #0b0b12; color: #ffffff; font-family: 'Plus Jakarta Sans', sans-serif; }
+  </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4">
+
+  <div class="w-full max-w-md bg-[#12121c] border border-[#252533] rounded-2xl p-6 sm:p-8 shadow-2xl">
+    <div class="flex items-center gap-3 mb-6">
+      <div class="w-10 h-10 rounded-xl bg-[#ff6b4a]/10 border border-[#ff6b4a]/20 flex items-center justify-center text-[#ff6b4a]">
+        <i class="fas fa-lock"></i>
+      </div>
+      <div>
+        <h2 class="text-lg font-extrabold">CMS Admin Authentication</h2>
+        <p class="text-xs text-[#8b8b9e]">Login to manage creations & gallery database</p>
+      </div>
+    </div>
+
+    <div class="bg-[#181824] border border-[#252533] rounded-xl p-3 mb-5 text-xs text-[#8b8b9e]">
+      <i class="fas fa-key text-[#ff6b4a] mr-1"></i> Admin Email: <code class="text-[#ff6b4a]">admin@pmd.in</code>
+    </div>
+
+    <form id="loginForm" class="space-y-4">
+      <div>
+        <label class="block text-xs font-semibold text-[#8b8b9e] mb-1">Email</label>
+        <input type="email" id="email" value="admin@pmd.in" required class="w-full bg-[#181824] border border-[#252533] rounded-xl px-4 py-2.5 text-xs focus:outline-none focus:border-[#ff6b4a]">
+      </div>
+      <div>
+        <label class="block text-xs font-semibold text-[#8b8b9e] mb-1">Password</label>
+        <input type="password" id="password" placeholder="••••••••" required class="w-full bg-[#181824] border border-[#252533] rounded-xl px-4 py-2.5 text-xs focus:outline-none focus:border-[#ff6b4a]">
+      </div>
+      <button type="submit" class="w-full bg-[#ff6b4a] text-[#0b0b12] font-bold py-2.5 rounded-xl text-xs hover:opacity-90 shadow-lg shadow-[#ff6b4a]/20">
+        Sign In to Admin Dashboard
+      </button>
+      <div id="errMsg" class="text-center text-xs text-rose-400 hidden"></div>
+    </form>
+  </div>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-app.js";
+    import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyA2hJxY5cj5Dzy_pTfdKvWp1musxqwB_bo",
+      authDomain: "princeverma-pmd.firebaseapp.com",
+      databaseURL: "https://princeverma-pmd-default-rtdb.firebaseio.com",
+      projectId: "princeverma-pmd",
+      storageBucket: "princeverma-pmd.firebasestorage.app",
+      messagingSenderId: "646607150608",
+      appId: "1:646607150608:web:19c48fbfe5774f1cd0f495"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    document.getElementById('loginForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = document.getElementById('email').value;
+      const pass = document.getElementById('password').value;
+      const errMsg = document.getElementById('errMsg');
+
+      try {
+        await signInWithEmailAndPassword(auth, email, pass);
+        window.location.href = 'admin.html';
+      } catch (err) {
+        errMsg.innerText = err.message;
+        errMsg.classList.remove('hidden');
+      }
+    });
+  </script>
+</body>
+</html>

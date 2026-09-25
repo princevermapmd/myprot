@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Covers & Posters Gallery · Prince Verma</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root[data-theme="dark"] { --bg-primary: #0b0b12; --bg-card: #12121c; --border-color: #252533; --text-primary: #ffffff; --text-secondary: #8b8b9e; --brand-color: #ff6b4a; }
+    body { background-color: var(--bg-primary); color: var(--text-primary); font-family: 'Plus Jakarta Sans', sans-serif; }
+  </style>
+</head>
+<body class="min-h-screen p-6 max-w-6xl mx-auto">
+
+  <header class="flex items-center justify-between pb-6 mb-8 border-b border-[#252533]">
+    <a href="index.html" class="flex items-center gap-2 text-xs font-bold text-[#ff6b4a] hover:underline">
+      <i class="fas fa-arrow-left"></i> Back to Resume Portfolio
+    </a>
+    <h1 class="text-xl font-extrabold tracking-tight">Creations & Publication Gallery</h1>
+    <span class="text-xs text-[#8b8b9e]"><i class="fas fa-expand mr-1"></i> Fancybox Lightbox Enabled</span>
+  </header>
+
+  <div id="galleryGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+    <!-- Static Initial Items -->
+    <a href="https://cinematicharyana.princeverma.workers.dev/img/uploads/1790164447825-ev42dsze.jpeg" data-fancybox="creations" data-caption="Prince Verma Official Graphic" class="group relative overflow-hidden rounded-2xl border border-[#252533] bg-[#12121c] aspect-[3/4] block">
+      <img src="https://cinematicharyana.princeverma.workers.dev/img/uploads/1790164447825-ev42dsze.jpeg" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+      <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition p-4 flex flex-col justify-end">
+        <span class="text-white text-xs font-bold">Official Profile Visual</span>
+      </div>
+    </a>
+  </div>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-app.js";
+    import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-database.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyA2hJxY5cj5Dzy_pTfdKvWp1musxqwB_bo",
+      authDomain: "princeverma-pmd.firebaseapp.com",
+      databaseURL: "https://princeverma-pmd-default-rtdb.firebaseio.com",
+      projectId: "princeverma-pmd",
+      storageBucket: "princeverma-pmd.firebasestorage.app",
+      messagingSenderId: "646607150608",
+      appId: "1:646607150608:web:19c48fbfe5774f1cd0f495"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase(app);
+
+    onValue(ref(db, 'gallery'), (snapshot) => {
+      const data = snapshot.val();
+      if (data) {
+        let html = '';
+        Object.keys(data).forEach(k => {
+          const item = data[k];
+          html += `
+            <a href="${item.url}" data-fancybox="creations" data-caption="${item.title}" class="group relative overflow-hidden rounded-2xl border border-[#252533] bg-[#12121c] aspect-[3/4] block">
+              <img src="${item.url}" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition p-4 flex flex-col justify-end">
+                <span class="text-white text-xs font-bold">${item.title}</span>
+              </div>
+            </a>
+          `;
+        });
+        document.getElementById('galleryGrid').innerHTML += html;
+        Fancybox.bind("[data-fancybox]", {});
+      }
+    });
+
+    Fancybox.bind("[data-fancybox]", {});
+  </script>
+</body>
+</html>
